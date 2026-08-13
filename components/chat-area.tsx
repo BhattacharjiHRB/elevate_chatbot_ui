@@ -50,7 +50,7 @@ export function ChatArea({
         <div className="w-full max-w-2xl py-12">
           <div className="mb-10 text-center">
             <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-              🤖 Elevate Intelligence
+              Elevate Intelligence
             </h2>
 
             <p className="mt-3 text-sm text-muted-foreground sm:text-base">
