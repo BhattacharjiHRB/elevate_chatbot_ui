@@ -103,7 +103,12 @@ export function Sidebar({ isOpen = true, onClose }: SidebarProps) {
       {/* Sidebar */}
       <div
         className={cn(
-          'fixed left-0 top-0 z-40 flex h-screen flex-col border-r border-border/50 bg-background transition-all duration-300 ease-out lg:static lg:translate-x-0 shadow-xl lg:shadow-none',
+          'fixed left-0 top-0 z-40 flex h-screen flex-col',
+          'bg-gradient-to-r from-[#0072BC] to-[#00AEEF]',
+          'border-r border-white/20',
+          'transition-all duration-300 ease-out',
+          'lg:static lg:translate-x-0',
+          'shadow-xl lg:shadow-none',
           isOpen ? 'translate-x-0' : '-translate-x-full',
           isCollapsed ? 'w-20' : 'w-64'
         )}
@@ -127,7 +132,12 @@ export function Sidebar({ isOpen = true, onClose }: SidebarProps) {
           <div className="flex items-center gap-1">
             {isCollapsed && (
               <div className="w-8 h-8 rounded-md  flex items-center justify-center">
-                <span className="text-white font-bold text-sm">E</span>
+                <Image
+                src="/assets/elevate.png"
+                alt="Elevate Intelligence Logo"
+                width={50}
+                height={50}
+              />
               </div>
             )}
             
@@ -164,7 +174,7 @@ export function Sidebar({ isOpen = true, onClose }: SidebarProps) {
           <Button
             onClick={handleNewChat}
             className={cn(
-              'w-full gap-2 rounded-lg bg-[#0072BC] hover:bg-[#0072BC]/50 text-center text-primary-foreground font-medium transition-all duration-200 shadow-sm hover:shadow-md',
+              'w-full gap-2 rounded-lg bg-[#00AEEF] hover:bg-[#0072BC] text-center text-primary-foreground font-medium transition-all duration-200 shadow-sm hover:shadow-md',
               isCollapsed && 'justify-center'
             )}
             variant="default"
@@ -200,7 +210,7 @@ export function Sidebar({ isOpen = true, onClose }: SidebarProps) {
               groupedConversations[group] && groupedConversations[group].length > 0 && (
                 <div key={group}>
                   {!isCollapsed && (
-                    <p className="px-2 py-3 text-xs font-semibold text-muted-foreground uppercase tracking-widest opacity-60">
+                    <p className="px-2 py-3 text-xs font-semibold text-foreground uppercase tracking-widest opacity-60">
                       {group}
                     </p>
                   )}
@@ -221,9 +231,9 @@ export function Sidebar({ isOpen = true, onClose }: SidebarProps) {
                             isCollapsed 
                               ? 'flex-1 p-2 flex justify-center'
                               : 'flex-1 px-3 py-2.5',
-                            'hover:bg-secondary',
+                            'hover:bg-[#0072BC] hover:text-white',
                             currentConversation?.id === conversation.id
-                              ? 'bg-[#00AEEF] text-primary-foreground shadow-md hover:bg-[#00AEEF]/50'
+                              ? 'bg-[#00AEEF] text-primary-foreground shadow-md hover:bg-[#0072BC]'
                               : 'text-foreground'
                           )}
                           title={conversation.title}
@@ -277,13 +287,13 @@ export function Sidebar({ isOpen = true, onClose }: SidebarProps) {
 
         {/* Footer Actions */}
         <div className={cn(
-          'border-t border-border/50 space-y-2 transition-all duration-300 bg-background/50 backdrop-blur-sm',
+          'space-y-2 transition-all duration-300 backdrop-blur-sm ',
           isCollapsed ? 'px-2 py-3' : 'px-3 py-4'
         )}>
           <Button
             variant="ghost"
             className={cn(
-              'text-foreground hover:bg-secondary transition-colors',
+              'text-foreground hover:bg-[#0072BC] hover:text-white transition-colors',
               isCollapsed 
                 ? 'w-full h-9 p-0 justify-center'
                 : 'w-full justify-start gap-2'
@@ -299,7 +309,7 @@ export function Sidebar({ isOpen = true, onClose }: SidebarProps) {
           <Button 
             variant="ghost" 
             className={cn(
-              'text-foreground hover:bg-secondary transition-colors',
+              'text-foreground hover:bg-[#0072BC] hover:text-white transition-colors',
               isCollapsed 
                 ? 'w-full h-9 p-0 justify-center'
                 : 'w-full justify-start gap-2'
@@ -313,7 +323,7 @@ export function Sidebar({ isOpen = true, onClose }: SidebarProps) {
           <Button 
             variant="ghost" 
             className={cn(
-              'text-destructive hover:bg-destructive/10 hover:text-red-600 transition-colors',
+              'text-destructive hover:bg-destructive hover:text-red-200 transition-colors',
               isCollapsed 
                 ? 'w-full h-9 p-0 justify-center'
                 : 'w-full justify-start gap-2'

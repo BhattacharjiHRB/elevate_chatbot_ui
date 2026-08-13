@@ -190,7 +190,7 @@ export function LoginPage({ onLoginSuccess }: LoginPageProps) {
                     setEmail(e.target.value)
                     setError('')
                   }}
-                  placeholder="your.name@company.com or name@university.edu"
+                  placeholder="your.name@company.com"
                   className={cn(
                     'w-full pl-10 pr-4 py-3 rounded-lg border transition-all duration-200',
                     'bg-background text-foreground placeholder:text-muted-foreground/50',
@@ -307,7 +307,7 @@ export function LoginPage({ onLoginSuccess }: LoginPageProps) {
             <Button
               type="submit"
               disabled={!isFormValid}
-              className="w-full bg-[#F5821F] hover:bg-[#F5821F]/90 text-primary-foreground font-medium py-3 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-[#F5821F] hover:bg-[#F5821F]/90 text-primary-foreground font-medium py-4 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? (
                 <div className="flex items-center gap-2">
