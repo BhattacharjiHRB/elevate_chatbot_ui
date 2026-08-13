@@ -104,7 +104,7 @@ export function Sidebar({ isOpen = true, onClose }: SidebarProps) {
       <div
         className={cn(
           'fixed left-0 top-0 z-40 flex h-screen flex-col',
-          'bg-gradient-to-r from-[#0072BC] to-[#00AEEF]',
+          'bg-linear-to-r from-[#0072BC] to-[#00AEEF]',
           'border-r border-white/20',
           'transition-all duration-300 ease-out',
           'lg:static lg:translate-x-0',
