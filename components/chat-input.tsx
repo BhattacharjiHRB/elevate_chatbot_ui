@@ -79,7 +79,7 @@ const removeFile = (index: number) => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Message Elevate AI..."
+              placeholder="Message Elevate Intelligence..."
               disabled={isLoading || disabled}
               className={cn(
                 'flex-1 rounded-xl border border-border bg-background px-4 py-3',

@@ -164,7 +164,7 @@ export function Sidebar({ isOpen = true, onClose }: SidebarProps) {
           <Button
             onClick={handleNewChat}
             className={cn(
-              'w-full gap-2 rounded-lg bg-[#0072BC] hover:bg-[#0072BC]/50 text-primary-foreground font-medium transition-all duration-200 shadow-sm hover:shadow-md',
+              'w-full gap-2 rounded-lg bg-[#0072BC] hover:bg-[#0072BC]/50 text-center text-primary-foreground font-medium transition-all duration-200 shadow-sm hover:shadow-md',
               isCollapsed && 'justify-center'
             )}
             variant="default"
@@ -208,12 +208,12 @@ export function Sidebar({ isOpen = true, onClose }: SidebarProps) {
                     'space-y-2 transition-all duration-300',
                     isCollapsed && 'space-y-1'
                   )}>
-                    {groupedConversations[group].map((conversation) => (
-                      <div
-                        key={conversation.id}
-                        className="group relative flex items-center gap-2"
-                        title={isCollapsed ? conversation.title : undefined}
-                      >
+                    {groupedConversations[group].map((conversation, index) => (
+                        <div
+                          key={`${conversation.id}-${index}`}
+                          className="group relative flex items-center gap-2"
+                          title={isCollapsed ? conversation.title : undefined}
+                        >
                         <button
                           onClick={() => handleSelectConversation(conversation)}
                           className={cn(
@@ -330,7 +330,7 @@ export function Sidebar({ isOpen = true, onClose }: SidebarProps) {
       <Dialog open={!!showDeleteConfirm} onOpenChange={(open: any) => !open && setShowDeleteConfirm(null)}>
         <DialogContent className="sm:max-w-106.25">
           <DialogHeader>
-            <DialogTitle className="text-destructive">Delete Conversation</DialogTitle>
+            <DialogTitle className="text-destructive font-bold text-xl">Delete Conversation</DialogTitle>
             <DialogDescription>
               Are you sure you want to delete this conversation? This action cannot be undone.
             </DialogDescription>
@@ -345,7 +345,7 @@ export function Sidebar({ isOpen = true, onClose }: SidebarProps) {
           </div>
 
           <DialogFooter className="flex gap-2 p-4 sm:gap-0">
-            <div className="flex flex-1 items-center gap-2 text-sm text-muted-foreground">
+            <div className="flex flex-1 items-center justify-between gap-2 text-sm text-muted-foreground">
               <Button
                 variant="outline"
                 onClick={() => setShowDeleteConfirm(null)}

@@ -225,7 +225,7 @@ export function ChatArea({
               {/* Typing indicator */}
               <div className="flex flex-1 flex-col gap-2">
                 <span className="text-sm font-semibold text-foreground">
-                  Elevate AI
+                  Elevate Intelligence
                 </span>
 
                 <div className="flex items-center gap-1.5 pt-1">
