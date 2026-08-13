@@ -3,7 +3,7 @@
 import { useChat } from '@/context/chat-context'
 import { useAuth } from '@/context/auth-context'
 import { Button } from '@/components/ui/button'
-import { Menu, Plus, MoreVertical, Share, Download, LogOut } from 'lucide-react'
+import { Menu, Plus, MoreVertical, Share, Download, LogOut, Trash, User } from 'lucide-react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -77,6 +77,10 @@ export function Header({ onMenuClick, isSidebarOpen = true }: HeaderProps) {
               </div>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
+                <User className="mr-2 h-4 w-4" />
+                Profile
+              </DropdownMenuItem>
+              <DropdownMenuItem>
                 <Share className="mr-2 h-4 w-4" />
                 Share
               </DropdownMenuItem>
@@ -84,10 +88,10 @@ export function Header({ onMenuClick, isSidebarOpen = true }: HeaderProps) {
                 <Download className="mr-2 h-4 w-4" />
                 Download
               </DropdownMenuItem>
-              <DropdownMenuItem className="text-destructive focus:text-destructive">
+              <DropdownMenuItem className="focus:text-destructive">
+                <Trash className="mr-2 h-4 w-4" />
                 Delete Conversation
               </DropdownMenuItem>
-              <DropdownMenuSeparator />
               <DropdownMenuItem 
                 onClick={() => logout()}
                 className="text-destructive focus:text-destructive cursor-pointer"
